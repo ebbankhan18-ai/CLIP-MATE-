@@ -24,7 +24,7 @@ from . import pipeline, social  # noqa: E402
 DATA = ROOT / "data"
 (DATA / "projects").mkdir(parents=True, exist_ok=True)
 
-app = FastAPI(title="Clip Mate")
+app = FastAPI()
 JOB_LOCK = threading.Lock()   # one heavy job at a time keeps a laptop responsive
 IO_LOCK = threading.RLock()
 PROJECTS = {}
