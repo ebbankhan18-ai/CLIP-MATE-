@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clip Mate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0C110F; --panel:#131A17; --panel2:#19231E; --line:#26332C; --text:#E9F1EC; --mute:#8DA195;
+  --accent:#6DF2A6; --accent-ink:#06130C; --danger:#FF6B5A; --warn:#F2C14E;
+  --r:14px; --r-sm:9px; color-scheme:dark;
+}
+*{box-sizing:border-box} html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--text);font:15px/1.5 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0;letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button{font:inherit;font-weight:600;cursor:pointer;border-radius:var(--r-sm);padding:9px 15px;border:1px solid var(--line);background:var(--panel2);color:var(--text)}
+button:hover:not(:disabled){border-color:var(--mute)}
+button:disabled{opacity:.5;cursor:default}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+button.small{padding:6px 11px;font-size:13px}
+button.ghost{background:transparent}
+input[type=text],input[type=number],select,textarea{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--panel);color:var(--text);font:inherit}
+label{display:block;font-size:13px;color:var(--mute);margin-bottom:4px}
+
+.app{display:grid;grid-template-columns:272px 1fr;height:100vh}
+.side{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:18px 14px;gap:16px;min-height:0}
+.brand{display:flex;align-items:center;gap:10px;padding:2px 6px;font:700 21px "Bricolage Grotesque",sans-serif}
+.brand svg{flex:none}
+.plist{display:flex;flex-direction:column;gap:2px;overflow:auto;flex:1;min-height:0}
+.plist h3{font:500 13px Figtree,system-ui,sans-serif;color:var(--mute);margin:6px 8px 4px}
+.pitem{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:9px 10px;border-radius:var(--r-sm);cursor:pointer}
+.pitem:hover{background:var(--panel2)} .pitem.sel{background:var(--panel2);box-shadow:inset 2px 0 var(--accent)}
+.pitem .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mute);flex:none}
+.dot.done{background:var(--accent)} .dot.error{background:var(--danger)} .dot.run{background:var(--warn)}
+.sys{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:12px}
+.sys .row{display:flex;align-items:center;gap:8px}
+.sys .ok{color:var(--accent)} .sys .bad{color:var(--danger)}
+.sys a,.sys button.link{color:inherit;background:none;border:0;padding:0;font-weight:500;text-decoration:underline;cursor:pointer}
+
+.main{overflow:auto;min-width:0}
+.wrap{max-width:1080px;margin:0 auto;padding:34px 32px 80px}
+
+/* new project screen */
+.hero{max-width:720px;margin:6vh auto 0;text-align:center}
+.hero h1{font-size:clamp(32px,5vw,48px);line-height:1.08}
+.hero p.sub{color:var(--mute);margin:12px auto 26px;max-width:46ch;font-size:16px}
+.linkbar{display:flex;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:8px}
+.linkbar:focus-within{border-color:var(--accent)}
+.linkbar input{border:0;background:transparent;font-size:16px;padding:10px 12px}
+.linkbar input:focus-visible{outline:0}
+.linkbar button{white-space:nowrap;padding:11px 20px}
+.drop{margin-top:12px;border:1.5px dashed var(--line);border-radius:var(--r);padding:20px;color:var(--mute);cursor:pointer;display:block}
+.drop.over,.drop.has{border-color:var(--accent);color:var(--text)}
+.drop strong{color:var(--text)}
+.vibes{margin-top:34px;text-align:left}
+.vibes h2{font-size:20px;margin-bottom:4px}
+.vibes p{margin:0 0 14px;color:var(--mute)}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.vibe{position:relative;cursor:pointer}
+.vibe input{position:absolute;opacity:0}
+.vibe .card{border:1.5px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden}
+.vibe input:checked + .card{border-color:var(--accent);box-shadow:0 0 0 3px rgba(109,242,166,.16)}
+.vibe input:focus-visible + .card{outline:2px solid var(--accent);outline-offset:2px}
+.prev{height:112px;display:grid;place-items:center;padding:8px;text-align:center;background:linear-gradient(160deg,#1d2a24,#0f1613);font:800 16px/1.15 Arial,sans-serif;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000,0 0 3px #000}
+.prev .hi{color:#FFE500}
+.prev.pop{text-transform:uppercase}
+.prev.kar .hi{color:#6DF2A6}
+.prev.clean{font-size:15px}.prev.clean .hi{color:#4ADE80}
+.prev.box span.b{background:rgba(0,0,0,.65);padding:3px 7px;text-shadow:none;border-radius:3px;display:inline-block}
+.vibe .name{padding:9px 12px;font-weight:600}
+details.opts{margin-top:26px;text-align:left;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+details.opts summary{padding:13px 16px;cursor:pointer;font-weight:600}
+.ogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 16px 16px}
+.foot{margin-top:26px;color:var(--mute);font-size:13px;text-align:center}
+
+/* project screen */
+.phead{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.phead h1{font-size:28px;line-height:1.15}
+.phead .meta{color:var(--mute);margin-top:4px}
+.log{list-style:none;margin:20px 0;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+.log li{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line)}
+.log li:last-child{border-bottom:0}
+.log .ck{width:18px;height:18px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:11px;font-weight:700}
+.log .time{color:var(--mute)}
+.log li.live .ck{background:transparent;border:2px solid var(--line);border-top-color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){.log li.live .ck{animation:spin 1s linear infinite}.bar i{transition:width .5s}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bar{height:5px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+.notice{border:1px solid var(--line);border-left:3px solid var(--warn);background:var(--panel);padding:10px 14px;border-radius:var(--r-sm);margin:12px 0;font-size:14px}
+.notice.err{border-left-color:var(--danger);white-space:pre-wrap}
+.timeline{position:relative;height:30px;margin:24px 0 30px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.timeline .mark{position:absolute;top:4px;bottom:4px;min-width:6px;background:var(--accent);border-radius:4px;cursor:pointer}
+.timeline .mark:hover{outline:2px solid #fff}
+.timeline .ends{position:absolute;left:2px;right:2px;bottom:-20px;display:flex;justify-content:space-between;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:20px}
+.clip{display:flex;flex-direction:column;gap:10px;scroll-margin-top:20px}
+.vid{position:relative;aspect-ratio:9/16;background:#000;border-radius:var(--r);overflow:hidden;display:grid;place-items:center;color:var(--mute);text-align:center;padding:14px;border:1px solid var(--line)}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:10px;left:10px;z-index:2;background:rgba(12,17,15,.82);border:1px solid var(--line);border-radius:99px;padding:3px 10px;font-weight:600;font-size:13px;pointer-events:none}
+.badge b{color:var(--accent)}
+.clip h3{font-size:17px;line-height:1.25}
+.cmeta{display:flex;justify-content:space-between;color:var(--mute)}
+.reason{color:var(--mute);font-size:14px;margin:0}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions a{text-decoration:none}
+details.more{border-top:1px solid var(--line);padding-top:8px}
+details.more summary{cursor:pointer;font-weight:600}
+.stack{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pubd{color:var(--accent);font-weight:600}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--text);color:var(--bg);padding:11px 15px;border-radius:var(--r-sm);max-width:380px;display:none;z-index:9;font-weight:500}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr;height:auto}
+  .side{border-right:0;border-bottom:1px solid var(--line)} .plist{max-height:160px}
+  .vgrid{grid-template-columns:repeat(2,1fr)} .ogrid{grid-template-columns:1fr}
+  .main{overflow:visible} .wrap{padding:24px 18px 60px}
+  .linkbar{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#6DF2A6"/><path d="M11 9.5v13l11-6.5z" fill="#06130C"/><path d="M8 25l16-18" stroke="#6DF2A6" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Clip Mate
+    </div>
+    <button class="primary" id="newBtn">+ New project</button>
+    <div class="plist" id="plist"></div>
+    <div class="sys" id="sys"></div>
+  </aside>
+  <div class="main"><div class="wrap" id="main"></div></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const tc = t => { t = Math.max(0, t); const h = Math.floor(t/3600), m = Math.floor(t%3600/60), s = Math.floor(t%60); return (h ? h + ":" + String(m).padStart(2,"0") : m) + ":" + String(s).padStart(2,"0"); };
+const clock = t => new Date(t * 1000).toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+const STAGES = ["downloading","transcribing","selecting","rendering"];
+const RANGE = [[0.02,0.13],[0.15,0.40],[0.55,0.10],[0.65,0.35]];
+const STAGE_LABEL = {queued:"Waiting for the previous job", downloading:"Getting the video", transcribing:"Transcribing every word", selecting:"Finding the strongest moments", rendering:"Rendering clips"};
+const VIBES = [
+  {id:"pop", name:"Bold pop", cls:"pop", html:'this <span class="hi">changed</span> everything'},
+  {id:"karaoke", name:"Karaoke", cls:"kar", html:'nobody <span class="hi">tells</span> you this'},
+  {id:"clean", name:"Minimal", cls:"clean", html:'I posted every <span class="hi">day</span> for 90 days'},
+  {id:"box", name:"Boxed", cls:"box", html:'<span class="b">my first <span class="hi">$1k</span> month</span>'},
+];
+let current = null, projects = [], sig = "", pollTimer = null, chosenFile = null, vibe = "pop";
+
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  if (!r.ok) { let m = await r.text(); try { m = JSON.parse(m).detail } catch {} throw new Error(m || r.statusText); }
+  return r.json();
+}
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = "none", 5000); }
+
+/* ---------- system status ---------- */
+async function loadStatus() {
+  const s = await api("/api/status"), yt = s.youtube;
+  const ai = s.llm === "ollama" ? "Local AI (Ollama)" : s.llm === "anthropic" ? "Claude" : "";
+  $("#sys").innerHTML =
+    `<div class="row ${s.ffmpeg ? "ok" : "bad"}">${s.ffmpeg ? "✓ ffmpeg ready" : "✕ ffmpeg missing, see README"}</div>` +
+    `<div class="row">${s.cuda ? "GPU" : "CPU"} · speech model ${esc(s.whisper_model)}</div>` +
+    `<div class="row ${ai ? "ok" : "bad"}">${ai ? "✓ Clip picker: " + ai : "✕ No AI set up (basic picking)"}</div>` +
+    `<div class="row ${yt.connected ? "ok" : ""}">${yt.connected ? `✓ YouTube connected · <button class="link" id="ytOff">disconnect</button>`
+       : yt.configured ? `<a href="/api/auth/youtube/login">Connect YouTube</a>` : "YouTube not set up (optional)"}</div>`;
+  const off = $("#ytOff"); if (off) off.onclick = async () => { await api("/api/auth/youtube/disconnect", {method:"POST"}); loadStatus(); };
+}
+
+/* ---------- projects list ---------- */
+async function loadProjects() {
+  projects = await api("/api/projects");
+  $("#plist").innerHTML = projects.length ? `<h3>Projects</h3>` + projects.map(p => {
+    const cls = p.state === "done" ? "done" : p.state === "error" ? "error" : "run";
+    return `<div class="pitem ${p.id === current ? "sel" : ""}" data-id="${p.id}" tabindex="0"><span class="t">${esc(p.title)}</span><span class="dot ${cls}" title="${esc(p.state)}"></span></div>`;
+  }).join("") : "";
+  document.querySelectorAll(".pitem").forEach(el => { el.onclick = () => select(el.dataset.id); el.onkeydown = e => { if (e.key === "Enter") select(el.dataset.id); }; });
+}
+function select(id) { current = id; sig = ""; loadProjects(); refresh(true); }
+$("#newBtn").onclick = () => { current = null; clearTimeout(pollTimer); loadProjects(); renderNew(); };
+
+/* ---------- new project screen ---------- */
+function renderNew() {
+  $("#main").innerHTML = `
+  <form class="hero" id="newForm">
+    <h1>Drop a link. Get clips.</h1>
+    <p class="sub">Paste a YouTube link or add a video. Clip Mate finds the best moments, cuts them to vertical and adds captions, all on this computer.</p>
+    <div class="linkbar">
+      <input id="url" type="text" placeholder="Paste a YouTube link" aria-label="Video link" autocomplete="off">
+      <button class="primary" id="go" type="submit">Make clips</button>
+    </div>
+    <label class="drop" id="drop" for="file"><strong>or drop a video file here</strong><br><span class="mono" id="fname">mp4, mov, mkv, webm</span></label>
+    <input id="file" type="file" accept="video/*,audio/*" hidden>
+
+    <div class="vibes">
+      <h2>Pick a vibe</h2><p>Your captions follow the look you choose. You can change it per clip later.</p>
+      <div class="vgrid">${VIBES.map(v => `<label class="vibe"><input type="radio" name="vibe" value="${v.id}" ${v.id === vibe ? "checked" : ""}>
+        <div class="card"><div class="prev ${v.cls}"><div>${v.html}</div></div><div class="name">${v.name}</div></div></label>`).join("")}</div>
+    </div>
+
+    <details class="opts"><summary>Options</summary>
+      <div class="ogrid">
+        <div><label for="num">How many clips</label><select id="num"><option>3</option><option selected>5</option><option>8</option><option>12</option></select></div>
+        <div><label for="profile">Content type</label><select id="profile"><option value="auto">Auto-detect</option><option value="podcast">Podcast / interview</option><option value="vlog">Vlog</option><option value="tutorial">Tutorial</option><option value="gaming">Gaming</option><option value="sports">Sports</option><option value="lecture">Talk / lecture</option></select></div>
+        <div><label for="reframe">Framing</label><select id="reframe"><option value="crop">Follow the face</option><option value="blur">Fit with blurred background</option></select></div>
+        <div><label for="minl">Shortest clip (sec)</label><input id="minl" type="number" value="25" min="10" max="170"></div>
+        <div><label for="maxl">Longest clip (sec)</label><input id="maxl" type="number" value="60" min="15" max="180"></div>
+      </div>
+    </details>
+    <div class="foot">Videos stay on this computer. Only transcript text goes to the AI you chose, and only if you publish does anything reach a platform.</div>
+  </form>`;
+  const drop = $("#drop");
+  const setFile = f => { chosenFile = f; $("#fname").textContent = f ? f.name : "mp4, mov, mkv, webm"; drop.classList.toggle("has", !!f); };
+  if (chosenFile) setFile(chosenFile);
+  $("#file").onchange = e => setFile(e.target.files[0] || null);
+  ["dragover","dragenter"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+  ["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+  drop.addEventListener("drop", e => { if (e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]); });
+  document.querySelectorAll('input[name="vibe"]').forEach(r => r.onchange = () => vibe = r.value);
+  $("#newForm").onsubmit = async e => {
+    e.preventDefault();
+    const url = $("#url").value.trim();
+    if (!chosenFile && !url) return toast("Paste a link or add a video file first.");
+    if (chosenFile && url) return toast("Use either a link or a file, not both.");
+    const fd = new FormData();
+    chosenFile ? fd.append("file", chosenFile) : fd.append("url", url);
+    fd.append("num_clips", $("#num").value); fd.append("min_len", $("#minl").value); fd.append("max_len", $("#maxl").value);
+    fd.append("profile", $("#profile").value); fd.append("reframe", $("#reframe").value); fd.append("caption_style", vibe);
+    const btn = $("#go"); btn.disabled = true; btn.textContent = "Starting…";
+    try { const { id } = await api("/api/projects", { method: "POST", body: fd }); chosenFile = null; await loadProjects(); select(id); }
+    catch (err) { toast(err.message); btn.disabled = false; btn.textContent = "Make clips"; }
+  };
+}
+
+/* ---------- project screen ---------- */
+async function refresh(force) {
+  if (!current) return renderNew();
+  let p; try { p = await api("/api/projects/" + current); } catch { current = null; return renderNew(); }
+  const busy = !["done","error"].includes(p.state) || p.clips.some(c => ["queued","rendering"].includes(c.status));
+  const next = JSON.stringify([p.state, p.message, Math.round(p.progress * 100), (p.log || []).length, p.clips.map(c => [c.id, c.status, c.version, c.score, c.published])]);
+  if (force || next !== sig) { sig = next; render(p); }
+  clearTimeout(pollTimer);
+  if (busy) pollTimer = setTimeout(() => { refresh(); loadProjects(); }, 2000);
+}
+
+function render(p) {
+  const running = !["done","error"].includes(p.state);
+  const si = STAGES.indexOf(p.state), dur = p.info?.duration || 0;
+  const pct = si >= 0 ? Math.max(0, Math.min(100, Math.round((p.progress - RANGE[si][0]) / RANGE[si][1] * 100))) : 0;
+  const live = running ? `<li class="live"><span class="ck"></span><div>${esc(STAGE_LABEL[p.state] || p.state)}${p.message && p.state !== "queued" ? ` <span class="time">· ${esc(p.message)}</span>` : ""}<div class="bar"><i style="width:${pct}%"></i></div></div><span class="time mono"></span></li>` : "";
+  const marks = p.clips.map(c => `<div class="mark" title="${esc(c.title)}" data-id="${c.id}" style="left:${c.start / dur * 100}%;width:${(c.end - c.start) / dur * 100}%"></div>`).join("");
+  $("#main").innerHTML = `
+    <div class="phead">
+      <div><h1>${esc(p.title)}</h1><div class="meta mono">${p.info ? tc(dur) + " · " + p.info.width + "×" + p.info.height : "Starting…"}</div></div>
+      <button class="small ghost" id="del">Delete</button>
+    </div>
+    ${(p.log || []).length || running ? `<ul class="log">${(p.log || []).map(l => `<li><span class="ck">✓</span><span>${esc(l.text)}</span><span class="time mono">${clock(l.t)}</span></li>`).join("")}${live}</ul>` : ""}
+    ${p.state === "error" ? `<div class="notice err">${esc(p.message || p.error)}</div>` : ""}
+    ${(p.warnings || []).map(w => `<div class="notice">${esc(w)}</div>`).join("")}
+    ${p.clips.length ? `<div class="timeline" aria-label="Where each clip sits in the source video">${marks}<div class="ends mono"><span>0:00</span><span>${tc(dur)}</span></div></div>` : ""}
+    <div class="grid">${p.clips.map(c => clipHTML(p, c)).join("")}</div>`;
+  $("#del").onclick = async () => { if (confirm("Delete this project and its files?")) { await api("/api/projects/" + p.id, {method:"DELETE"}); current = null; await loadProjects(); renderNew(); } };
+  document.querySelectorAll(".mark").forEach(m => m.onclick = () => document.getElementById("clip-" + m.dataset.id)?.scrollIntoView({behavior:"smooth", block:"center"}));
+  p.clips.forEach(c => wireClip(p, c));
+}
+
+function clipHTML(p, c) {
+  const vid = c.status === "ready" ? `<video src="${c.url}" controls preload="metadata" playsinline></video>`
+    : c.status === "error" ? `Render failed:<br><span class="mono">${esc((c.error || "").slice(0, 200))}</span>` : "Rendering…";
+  const busy = ["queued","rendering"].includes(c.status);
+  return `<article class="clip" id="clip-${c.id}">
+    <div class="vid"><span class="badge">Score <b>${c.score}</b></span>${vid}</div>
+    <h3>${esc(c.title)}</h3>
+    <div class="cmeta mono"><span>${tc(c.start)}–${tc(c.end)}</span><span>${Math.round(c.end - c.start)}s</span></div>
+    <p class="reason">${esc(c.reason)}</p>
+    <div class="actions">
+      ${c.status === "ready" ? `<a href="${c.url}" download="${esc(c.title)}.mp4"><button class="small" type="button">Download</button></a>` : ""}
+      ${c.published?.youtube ? `<a class="pubd" href="${c.published.youtube}" target="_blank" rel="noopener">Published on YouTube</a>` : ""}
+    </div>
+    <details class="more"><summary>Adjust</summary><div class="stack">
+      <div class="two">
+        <div><label for="s-${c.id}">Start (sec)</label><input id="s-${c.id}" type="number" step="0.1" value="${c.start}"></div>
+        <div><label for="e-${c.id}">End (sec)</label><input id="e-${c.id}" type="number" step="0.1" value="${c.end}"></div>
+      </div>
+      <div class="two">
+        <div><label for="cs-${c.id}">Captions</label><select id="cs-${c.id}">${VIBES.map(v => `<option value="${v.id}" ${v.id === c.caption_style ? "selected" : ""}>${v.name}</option>`).join("")}</select></div>
+        <div><label for="rf-${c.id}">Framing</label><select id="rf-${c.id}"><option value="crop" ${c.reframe === "crop" ? "selected" : ""}>Follow face</option><option value="blur" ${c.reframe === "blur" ? "selected" : ""}>Blur fit</option></select></div>
+      </div>
+      <button class="small" data-act="render" ${busy ? "disabled" : ""}>Re-render</button>
+    </div></details>
+    ${c.status === "ready" ? `<details class="more"><summary>Publish</summary><div class="stack">
+      <div><label for="t-${c.id}">YouTube title</label><input id="t-${c.id}" type="text" maxlength="100" value="${esc(c.title)}"></div>
+      <div><label for="d-${c.id}">Description</label><textarea id="d-${c.id}" rows="2"></textarea></div>
+      <div><label for="v-${c.id}">Visibility</label><select id="v-${c.id}"><option value="private">Private</option><option value="unlisted">Unlisted</option><option value="public">Public</option></select></div>
+      <button class="small primary" data-act="yt">Upload to YouTube</button>
+    </div></details>` : ""}
+  </article>`;
+}
+
+function wireClip(p, c) {
+  const el = document.getElementById("clip-" + c.id), v = id => el.querySelector("#" + id + "-" + c.id).value;
+  el.querySelector('[data-act="render"]')?.addEventListener("click", async () => {
+    try {
+      await api(`/api/projects/${p.id}/clips/${c.id}/render`, { method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ start: +v("s"), end: +v("e"), caption_style: v("cs"), reframe: v("rf") }) });
+      refresh(true);
+    } catch (err) { toast(err.message); }
+  });
+  el.querySelector('[data-act="yt"]')?.addEventListener("click", async e => {
+    const b = e.target; b.disabled = true; b.textContent = "Uploading…";
+    try {
+      await api("/api/publish/youtube", { method:"POST", headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ project_id: p.id, clip_id: c.id, title: v("t"), description: v("d"), privacy: v("v") }) });
+      toast("Uploaded to YouTube."); refresh(true);
+    } catch (err) { toast(err.message); b.disabled = false; b.textContent = "Upload to YouTube"; }
+  });
+}
+
+/* ---------- boot ---------- */
+const q = new URLSearchParams(location.search);
+if (q.get("youtube")) { toast(q.get("youtube") === "connected" ? "YouTube connected." : "YouTube login was cancelled."); history.replaceState({}, "", "/"); }
+loadStatus(); loadProjects().then(() => renderNew());
+</script>
+</body>
+</html>

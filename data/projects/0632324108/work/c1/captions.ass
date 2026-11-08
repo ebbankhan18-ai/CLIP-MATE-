@@ -1,0 +1,40 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Arial,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,7,0,2,90,90,430,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.15,0:00:00.70,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}HI{\r}
+Dialogue: 0,0:00:17.03,0:00:17.58,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THERE,{\r}
+Dialogue: 0,0:00:17.55,0:00:17.61,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}MY{\r} NAME IS
+Dialogue: 0,0:00:17.61,0:00:17.75,Cap,,0,0,0,,MY {\1c&H0000E5FF&\fscx110\fscy110}NAME{\r} IS
+Dialogue: 0,0:00:17.75,0:00:18.02,Cap,,0,0,0,,MY NAME {\1c&H0000E5FF&\fscx110\fscy110}IS{\r}
+Dialogue: 0,0:00:17.87,0:00:18.05,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}ADAM{\r} SARNESON.
+Dialogue: 0,0:00:18.05,0:00:18.76,Cap,,0,0,0,,ADAM {\1c&H0000E5FF&\fscx110\fscy110}SARNESON.{\r}
+Dialogue: 0,0:00:18.61,0:00:18.75,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I'M{\r} AN ASTON
+Dialogue: 0,0:00:18.75,0:00:18.81,Cap,,0,0,0,,I'M {\1c&H0000E5FF&\fscx110\fscy110}AN{\r} ASTON
+Dialogue: 0,0:00:18.81,0:00:19.14,Cap,,0,0,0,,I'M AN {\1c&H0000E5FF&\fscx110\fscy110}ASTON{\r}
+Dialogue: 0,0:00:18.99,0:00:19.25,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}MARTIN{\r} FAN.
+Dialogue: 0,0:00:19.25,0:00:19.72,Cap,,0,0,0,,MARTIN {\1c&H0000E5FF&\fscx110\fscy110}FAN.{\r}
+Dialogue: 0,0:00:19.73,0:00:19.83,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I'M{\r} A MASSIVE
+Dialogue: 0,0:00:19.83,0:00:19.87,Cap,,0,0,0,,I'M {\1c&H0000E5FF&\fscx110\fscy110}A{\r} MASSIVE
+Dialogue: 0,0:00:19.87,0:00:20.24,Cap,,0,0,0,,I'M A {\1c&H0000E5FF&\fscx110\fscy110}MASSIVE{\r}
+Dialogue: 0,0:00:20.09,0:00:20.43,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}FAN{\r} OF ALONSO
+Dialogue: 0,0:00:20.43,0:00:20.95,Cap,,0,0,0,,FAN {\1c&H0000E5FF&\fscx110\fscy110}OF{\r} ALONSO
+Dialogue: 0,0:00:20.95,0:00:21.64,Cap,,0,0,0,,FAN OF {\1c&H0000E5FF&\fscx110\fscy110}ALONSO{\r}
+Dialogue: 0,0:00:21.49,0:00:21.98,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}SPECIFICALLY.{\r}
+Dialogue: 0,0:00:23.19,0:00:23.59,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}WHAT'S{\r} UP,
+Dialogue: 0,0:00:23.59,0:00:23.92,Cap,,0,0,0,,WHAT'S {\1c&H0000E5FF&\fscx110\fscy110}UP,{\r}
+Dialogue: 0,0:00:23.93,0:00:24.40,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}PAULSON?{\r}
+Dialogue: 0,0:00:24.51,0:00:24.71,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}HOW{\r} ARE YOU
+Dialogue: 0,0:00:24.71,0:00:24.81,Cap,,0,0,0,,HOW {\1c&H0000E5FF&\fscx110\fscy110}ARE{\r} YOU
+Dialogue: 0,0:00:24.81,0:00:25.04,Cap,,0,0,0,,HOW ARE {\1c&H0000E5FF&\fscx110\fscy110}YOU{\r}
+Dialogue: 0,0:00:24.89,0:00:25.30,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DOING?{\r}
+Dialogue: 0,0:00:25.39,0:00:25.70,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r}

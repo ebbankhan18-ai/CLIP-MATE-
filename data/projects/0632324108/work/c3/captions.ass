@@ -1,0 +1,84 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Arial,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,7,0,2,90,90,430,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.15,0:00:00.33,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THAT{\r} WAS FAST.
+Dialogue: 0,0:00:00.33,0:00:00.47,Cap,,0,0,0,,THAT {\1c&H0000E5FF&\fscx110\fscy110}WAS{\r} FAST.
+Dialogue: 0,0:00:00.47,0:00:00.94,Cap,,0,0,0,,THAT WAS {\1c&H0000E5FF&\fscx110\fscy110}FAST.{\r}
+Dialogue: 0,0:00:01.09,0:00:01.31,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THANK{\r} YOU,
+Dialogue: 0,0:00:01.31,0:00:01.58,Cap,,0,0,0,,THANK {\1c&H0000E5FF&\fscx110\fscy110}YOU,{\r}
+Dialogue: 0,0:00:01.45,0:00:01.94,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}COINBASE.{\r}
+Dialogue: 0,0:00:02.05,0:00:02.23,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THANK{\r} YOU,
+Dialogue: 0,0:00:02.23,0:00:02.48,Cap,,0,0,0,,THANK {\1c&H0000E5FF&\fscx110\fscy110}YOU,{\r}
+Dialogue: 0,0:00:02.41,0:00:02.66,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DALE.{\r}
+Dialogue: 0,0:00:02.83,0:00:03.01,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THANK{\r} YOU,
+Dialogue: 0,0:00:03.01,0:00:03.28,Cap,,0,0,0,,THANK {\1c&H0000E5FF&\fscx110\fscy110}YOU,{\r}
+Dialogue: 0,0:00:03.21,0:00:03.35,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}ASTON{\r} MARTIN AND
+Dialogue: 0,0:00:03.35,0:00:03.63,Cap,,0,0,0,,ASTON {\1c&H0000E5FF&\fscx110\fscy110}MARTIN{\r} AND
+Dialogue: 0,0:00:03.63,0:00:03.98,Cap,,0,0,0,,ASTON MARTIN {\1c&H0000E5FF&\fscx110\fscy110}AND{\r}
+Dialogue: 0,0:00:03.83,0:00:04.26,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}RAMCO.{\r}
+Dialogue: 0,0:00:04.31,0:00:04.53,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THANK{\r} YOU FOR
+Dialogue: 0,0:00:04.53,0:00:04.67,Cap,,0,0,0,,THANK {\1c&H0000E5FF&\fscx110\fscy110}YOU{\r} FOR
+Dialogue: 0,0:00:04.67,0:00:04.96,Cap,,0,0,0,,THANK YOU {\1c&H0000E5FF&\fscx110\fscy110}FOR{\r}
+Dialogue: 0,0:00:04.81,0:00:04.95,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}SHOWING{\r} ME HOW
+Dialogue: 0,0:00:04.95,0:00:05.15,Cap,,0,0,0,,SHOWING {\1c&H0000E5FF&\fscx110\fscy110}ME{\r} HOW
+Dialogue: 0,0:00:05.15,0:00:05.44,Cap,,0,0,0,,SHOWING ME {\1c&H0000E5FF&\fscx110\fscy110}HOW{\r}
+Dialogue: 0,0:00:05.29,0:00:05.69,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}TEXAS{\r} DOES F1.
+Dialogue: 0,0:00:05.69,0:00:06.07,Cap,,0,0,0,,TEXAS {\1c&H0000E5FF&\fscx110\fscy110}DOES{\r} F1.
+Dialogue: 0,0:00:06.07,0:00:06.86,Cap,,0,0,0,,TEXAS DOES {\1c&H0000E5FF&\fscx110\fscy110}F1.{\r}
+Dialogue: 0,0:00:07.11,0:00:07.33,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}ON{\r} TO THE
+Dialogue: 0,0:00:07.33,0:00:07.45,Cap,,0,0,0,,ON {\1c&H0000E5FF&\fscx110\fscy110}TO{\r} THE
+Dialogue: 0,0:00:07.45,0:00:07.72,Cap,,0,0,0,,ON TO {\1c&H0000E5FF&\fscx110\fscy110}THE{\r}
+Dialogue: 0,0:00:07.57,0:00:07.92,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}NEXT,{\r}
+Dialogue: 0,0:00:07.87,0:00:08.03,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}OLD{\r} SON.
+Dialogue: 0,0:00:08.03,0:00:08.46,Cap,,0,0,0,,OLD {\1c&H0000E5FF&\fscx110\fscy110}SON.{\r}
+Dialogue: 0,0:00:08.81,0:00:09.32,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}INSANE.{\r}
+Dialogue: 0,0:00:09.61,0:00:10.12,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}INSANE.{\r}
+Dialogue: 0,0:00:10.09,0:00:10.21,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}LOOK{\r} AT THAT.
+Dialogue: 0,0:00:10.21,0:00:10.35,Cap,,0,0,0,,LOOK {\1c&H0000E5FF&\fscx110\fscy110}AT{\r} THAT.
+Dialogue: 0,0:00:10.35,0:00:10.76,Cap,,0,0,0,,LOOK AT {\1c&H0000E5FF&\fscx110\fscy110}THAT.{\r}
+Dialogue: 0,0:00:17.30,0:00:17.66,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r} THINK I
+Dialogue: 0,0:00:17.66,0:00:17.84,Cap,,0,0,0,,I {\1c&H0000E5FF&\fscx110\fscy110}THINK{\r} I
+Dialogue: 0,0:00:17.84,0:00:18.13,Cap,,0,0,0,,I THINK {\1c&H0000E5FF&\fscx110\fscy110}I{\r}
+Dialogue: 0,0:00:17.98,0:00:18.10,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}COULD{\r} LEARN BETTER
+Dialogue: 0,0:00:18.10,0:00:18.30,Cap,,0,0,0,,COULD {\1c&H0000E5FF&\fscx110\fscy110}LEARN{\r} BETTER
+Dialogue: 0,0:00:18.30,0:00:18.83,Cap,,0,0,0,,COULD LEARN {\1c&H0000E5FF&\fscx110\fscy110}BETTER{\r}
+Dialogue: 0,0:00:18.68,0:00:19.14,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}RACING{\r} IN A
+Dialogue: 0,0:00:19.14,0:00:19.34,Cap,,0,0,0,,RACING {\1c&H0000E5FF&\fscx110\fscy110}IN{\r} A
+Dialogue: 0,0:00:19.34,0:00:19.59,Cap,,0,0,0,,RACING IN {\1c&H0000E5FF&\fscx110\fscy110}A{\r}
+Dialogue: 0,0:00:19.44,0:00:19.64,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}WEEK{\r} THAN YOU
+Dialogue: 0,0:00:19.64,0:00:19.96,Cap,,0,0,0,,WEEK {\1c&H0000E5FF&\fscx110\fscy110}THAN{\r} YOU
+Dialogue: 0,0:00:19.96,0:00:20.25,Cap,,0,0,0,,WEEK THAN {\1c&H0000E5FF&\fscx110\fscy110}YOU{\r}
+Dialogue: 0,0:00:20.10,0:00:20.28,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}COULD{\r} BULL RIDING
+Dialogue: 0,0:00:20.28,0:00:20.54,Cap,,0,0,0,,COULD {\1c&H0000E5FF&\fscx110\fscy110}BULL{\r} RIDING
+Dialogue: 0,0:00:20.54,0:00:20.93,Cap,,0,0,0,,COULD BULL {\1c&H0000E5FF&\fscx110\fscy110}RIDING{\r}
+Dialogue: 0,0:00:20.78,0:00:20.96,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}IN{\r} A WEEK.
+Dialogue: 0,0:00:20.96,0:00:21.06,Cap,,0,0,0,,IN {\1c&H0000E5FF&\fscx110\fscy110}A{\r} WEEK.
+Dialogue: 0,0:00:21.06,0:00:21.35,Cap,,0,0,0,,IN A {\1c&H0000E5FF&\fscx110\fscy110}WEEK.{\r}
+Dialogue: 0,0:00:21.32,0:00:21.54,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r} RECKON GIVING
+Dialogue: 0,0:00:21.54,0:00:21.86,Cap,,0,0,0,,I {\1c&H0000E5FF&\fscx110\fscy110}RECKON{\r} GIVING
+Dialogue: 0,0:00:21.86,0:00:22.23,Cap,,0,0,0,,I RECKON {\1c&H0000E5FF&\fscx110\fscy110}GIVING{\r}
+Dialogue: 0,0:00:22.08,0:00:22.24,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}A{\r} WHOLE WEEK
+Dialogue: 0,0:00:22.24,0:00:22.40,Cap,,0,0,0,,A {\1c&H0000E5FF&\fscx110\fscy110}WHOLE{\r} WEEK
+Dialogue: 0,0:00:22.40,0:00:22.75,Cap,,0,0,0,,A WHOLE {\1c&H0000E5FF&\fscx110\fscy110}WEEK{\r}
+Dialogue: 0,0:00:22.60,0:00:22.78,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}OF{\r} SOLID TRAINING.
+Dialogue: 0,0:00:22.78,0:00:23.06,Cap,,0,0,0,,OF {\1c&H0000E5FF&\fscx110\fscy110}SOLID{\r} TRAINING.
+Dialogue: 0,0:00:23.06,0:00:23.67,Cap,,0,0,0,,OF SOLID {\1c&H0000E5FF&\fscx110\fscy110}TRAINING.{\r}
+Dialogue: 0,0:00:23.70,0:00:23.80,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r} RECKON I
+Dialogue: 0,0:00:23.70,0:00:23.96,Cap,,0,0,0,,I {\1c&H0000E5FF&\fscx110\fscy110}RECKON{\r} I
+Dialogue: 0,0:00:23.96,0:00:24.27,Cap,,0,0,0,,I RECKON {\1c&H0000E5FF&\fscx110\fscy110}I{\r}
+Dialogue: 0,0:00:24.12,0:00:24.37,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}COULD.{\r}
+Dialogue: 0,0:00:24.38,0:00:24.73,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DANG,{\r}
+Dialogue: 0,0:00:24.74,0:00:24.76,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}YOU{\r} REALLY ARE
+Dialogue: 0,0:00:24.76,0:00:25.00,Cap,,0,0,0,,YOU {\1c&H0000E5FF&\fscx110\fscy110}REALLY{\r} ARE
+Dialogue: 0,0:00:25.00,0:00:25.35,Cap,,0,0,0,,YOU REALLY {\1c&H0000E5FF&\fscx110\fscy110}ARE{\r}
+Dialogue: 0,0:00:25.20,0:00:25.53,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DELUSIONAL.{\r}

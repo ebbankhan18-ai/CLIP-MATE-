@@ -1,0 +1,102 @@
+{
+  "id": "0632324108",
+  "title": "Coinbase Hero - (H264 TEXT)",
+  "created": 1794155721.5453393,
+  "state": "done",
+  "message": "",
+  "progress": 1.0,
+  "source": {
+    "kind": "upload",
+    "path": "C:\\Users\\Farhan\\Downloads\\clipmate\\clipmate\\data\\projects\\0632324108\\upload.mp4",
+    "name": "Coinbase Hero - (H264 TEXT).mp4"
+  },
+  "clips": [
+    {
+      "id": "c1",
+      "start": 8.34,
+      "end": 33.84,
+      "score": 100,
+      "title": "Monster Truck Welcome",
+      "reason": "Captures audience's curiosity with a thrilling introduction.",
+      "status": "ready",
+      "version": 1,
+      "file": "c1_v1.mp4",
+      "published": {},
+      "reframe": "blur",
+      "caption_style": "pop"
+    },
+    {
+      "id": "c2",
+      "start": 164.88,
+      "end": 191.2,
+      "score": 95,
+      "title": "Bull Riding Intimidation",
+      "reason": "Shows Dale's fear and anticipation, creating tension and interest.",
+      "status": "ready",
+      "version": 1,
+      "file": "c2_v1.mp4",
+      "published": {},
+      "reframe": "blur",
+      "caption_style": "pop"
+    },
+    {
+      "id": "c3",
+      "start": 540.27,
+      "end": 566.0,
+      "score": 95,
+      "title": "Coinbase and Partners Recognition",
+      "reason": "Shows appreciation for multiple sponsors in a concise, engaging way.",
+      "status": "ready",
+      "version": 1,
+      "file": "c3_v1.mp4",
+      "published": {},
+      "reframe": "blur",
+      "caption_style": "pop"
+    }
+  ],
+  "warnings": [],
+  "settings": {
+    "num_clips": 3,
+    "min_len": 25,
+    "max_len": 60,
+    "profile": "vlog",
+    "reframe": "blur",
+    "caption_style": "pop"
+  },
+  "info": {
+    "width": 1920,
+    "height": 1080,
+    "duration": 590.131208
+  },
+  "source_file": "upload.mp4",
+  "log": [
+    {
+      "t": 1794155721.794344,
+      "text": "Got the video \u00b7 9:50"
+    },
+    {
+      "t": 1794163389.5046697,
+      "text": "Transcribed \u00b7 1,538 words"
+    },
+    {
+      "t": 1794163589.7168581,
+      "text": "Picked 3 strong moments"
+    },
+    {
+      "t": 1794163654.8215795,
+      "text": "Rendered clip 1 \u00b7 Monster Truck Welcome"
+    },
+    {
+      "t": 1794163725.9886782,
+      "text": "Rendered clip 2 \u00b7 Bull Riding Intimidation"
+    },
+    {
+      "t": 1794163797.3317425,
+      "text": "Rendered clip 3 \u00b7 Coinbase and Partners Recognition"
+    },
+    {
+      "t": 1794163797.3333533,
+      "text": "3 clips ready"
+    }
+  ]
+}

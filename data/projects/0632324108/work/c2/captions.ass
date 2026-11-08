@@ -1,0 +1,96 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Arial,84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,7,0,2,90,90,430,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.15,0:00:00.23,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}BIT{\r} SCARY.
+Dialogue: 0,0:00:00.23,0:00:00.60,Cap,,0,0,0,,BIT {\1c&H0000E5FF&\fscx110\fscy110}SCARY.{\r}
+Dialogue: 0,0:00:00.71,0:00:00.87,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}LOVE{\r} IT.
+Dialogue: 0,0:00:00.87,0:00:01.16,Cap,,0,0,0,,LOVE {\1c&H0000E5FF&\fscx110\fscy110}IT.{\r}
+Dialogue: 0,0:00:01.09,0:00:01.19,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THEN{\r} I GOT
+Dialogue: 0,0:00:01.19,0:00:01.29,Cap,,0,0,0,,THEN {\1c&H0000E5FF&\fscx110\fscy110}I{\r} GOT
+Dialogue: 0,0:00:01.29,0:00:01.54,Cap,,0,0,0,,THEN I {\1c&H0000E5FF&\fscx110\fscy110}GOT{\r}
+Dialogue: 0,0:00:01.39,0:00:01.59,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}KICKED{\r} OUT AND
+Dialogue: 0,0:00:01.59,0:00:01.81,Cap,,0,0,0,,KICKED {\1c&H0000E5FF&\fscx110\fscy110}OUT{\r} AND
+Dialogue: 0,0:00:01.81,0:00:02.04,Cap,,0,0,0,,KICKED OUT {\1c&H0000E5FF&\fscx110\fscy110}AND{\r}
+Dialogue: 0,0:00:01.89,0:00:02.01,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}ALL{\r} THIS STUFF.
+Dialogue: 0,0:00:02.01,0:00:02.15,Cap,,0,0,0,,ALL {\1c&H0000E5FF&\fscx110\fscy110}THIS{\r} STUFF.
+Dialogue: 0,0:00:02.15,0:00:02.62,Cap,,0,0,0,,ALL THIS {\1c&H0000E5FF&\fscx110\fscy110}STUFF.{\r}
+Dialogue: 0,0:00:02.87,0:00:03.34,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}OH,{\r}
+Dialogue: 0,0:00:03.21,0:00:03.31,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r} CANNOT WAIT
+Dialogue: 0,0:00:03.31,0:00:03.45,Cap,,0,0,0,,I {\1c&H0000E5FF&\fscx110\fscy110}CANNOT{\r} WAIT
+Dialogue: 0,0:00:03.45,0:00:03.86,Cap,,0,0,0,,I CANNOT {\1c&H0000E5FF&\fscx110\fscy110}WAIT{\r}
+Dialogue: 0,0:00:03.71,0:00:03.85,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}TO{\r} SEE WHAT
+Dialogue: 0,0:00:03.85,0:00:03.89,Cap,,0,0,0,,TO {\1c&H0000E5FF&\fscx110\fscy110}SEE{\r} WHAT
+Dialogue: 0,0:00:03.89,0:00:04.14,Cap,,0,0,0,,TO SEE {\1c&H0000E5FF&\fscx110\fscy110}WHAT{\r}
+Dialogue: 0,0:00:03.99,0:00:04.09,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THEY'RE{\r} DOING TOMORROW,
+Dialogue: 0,0:00:04.09,0:00:04.21,Cap,,0,0,0,,THEY'RE {\1c&H0000E5FF&\fscx110\fscy110}DOING{\r} TOMORROW,
+Dialogue: 0,0:00:04.21,0:00:04.58,Cap,,0,0,0,,THEY'RE DOING {\1c&H0000E5FF&\fscx110\fscy110}TOMORROW,{\r}
+Dialogue: 0,0:00:04.59,0:00:04.86,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}MAN.{\r}
+Dialogue: 0,0:00:05.29,0:00:05.61,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}CANNOT{\r} WAIT.
+Dialogue: 0,0:00:05.61,0:00:06.08,Cap,,0,0,0,,CANNOT {\1c&H0000E5FF&\fscx110\fscy110}WAIT.{\r}
+Dialogue: 0,0:00:08.71,0:00:09.03,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}SURELY{\r} I'M NOT
+Dialogue: 0,0:00:09.03,0:00:09.23,Cap,,0,0,0,,SURELY {\1c&H0000E5FF&\fscx110\fscy110}I'M{\r} NOT
+Dialogue: 0,0:00:09.23,0:00:09.50,Cap,,0,0,0,,SURELY I'M {\1c&H0000E5FF&\fscx110\fscy110}NOT{\r}
+Dialogue: 0,0:00:09.35,0:00:09.51,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DOING{\r} THAT.
+Dialogue: 0,0:00:09.51,0:00:10.02,Cap,,0,0,0,,DOING {\1c&H0000E5FF&\fscx110\fscy110}THAT.{\r}
+Dialogue: 0,0:00:11.49,0:00:11.96,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}YES,{\r}
+Dialogue: 0,0:00:11.93,0:00:12.26,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}SIR.{\r}
+Dialogue: 0,0:00:12.83,0:00:13.15,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}WE'VE{\r} GOT FLAMBAS.
+Dialogue: 0,0:00:13.15,0:00:13.31,Cap,,0,0,0,,WE'VE {\1c&H0000E5FF&\fscx110\fscy110}GOT{\r} FLAMBAS.
+Dialogue: 0,0:00:13.31,0:00:13.86,Cap,,0,0,0,,WE'VE GOT {\1c&H0000E5FF&\fscx110\fscy110}FLAMBAS.{\r}
+Dialogue: 0,0:00:16.03,0:00:16.13,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}I{\r} KNOW YOU
+Dialogue: 0,0:00:16.03,0:00:16.57,Cap,,0,0,0,,I {\1c&H0000E5FF&\fscx110\fscy110}KNOW{\r} YOU
+Dialogue: 0,0:00:16.57,0:00:16.86,Cap,,0,0,0,,I KNOW {\1c&H0000E5FF&\fscx110\fscy110}YOU{\r}
+Dialogue: 0,0:00:16.71,0:00:16.91,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}CAME{\r} ALL THE
+Dialogue: 0,0:00:16.91,0:00:17.15,Cap,,0,0,0,,CAME {\1c&H0000E5FF&\fscx110\fscy110}ALL{\r} THE
+Dialogue: 0,0:00:17.15,0:00:17.40,Cap,,0,0,0,,CAME ALL {\1c&H0000E5FF&\fscx110\fscy110}THE{\r}
+Dialogue: 0,0:00:17.25,0:00:17.35,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}WAY{\r} TO TEXAS
+Dialogue: 0,0:00:17.35,0:00:17.47,Cap,,0,0,0,,WAY {\1c&H0000E5FF&\fscx110\fscy110}TO{\r} TEXAS
+Dialogue: 0,0:00:17.47,0:00:17.88,Cap,,0,0,0,,WAY TO {\1c&H0000E5FF&\fscx110\fscy110}TEXAS{\r}
+Dialogue: 0,0:00:17.73,0:00:18.01,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}FOR{\r} THE ADRENALINE
+Dialogue: 0,0:00:18.01,0:00:18.15,Cap,,0,0,0,,FOR {\1c&H0000E5FF&\fscx110\fscy110}THE{\r} ADRENALINE
+Dialogue: 0,0:00:18.15,0:00:18.68,Cap,,0,0,0,,FOR THE {\1c&H0000E5FF&\fscx110\fscy110}ADRENALINE{\r}
+Dialogue: 0,0:00:18.53,0:00:18.83,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}OF{\r} F1,
+Dialogue: 0,0:00:18.83,0:00:19.46,Cap,,0,0,0,,OF {\1c&H0000E5FF&\fscx110\fscy110}F1,{\r}
+Dialogue: 0,0:00:19.49,0:00:19.67,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}BUT{\r} WE'RE GOING
+Dialogue: 0,0:00:19.67,0:00:19.81,Cap,,0,0,0,,BUT {\1c&H0000E5FF&\fscx110\fscy110}WE'RE{\r} GOING
+Dialogue: 0,0:00:19.81,0:00:20.06,Cap,,0,0,0,,BUT WE'RE {\1c&H0000E5FF&\fscx110\fscy110}GOING{\r}
+Dialogue: 0,0:00:19.91,0:00:20.01,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}TO{\r} SHOW YOU
+Dialogue: 0,0:00:19.91,0:00:20.07,Cap,,0,0,0,,TO {\1c&H0000E5FF&\fscx110\fscy110}SHOW{\r} YOU
+Dialogue: 0,0:00:20.07,0:00:20.36,Cap,,0,0,0,,TO SHOW {\1c&H0000E5FF&\fscx110\fscy110}YOU{\r}
+Dialogue: 0,0:00:20.21,0:00:20.29,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THE{\r} ADRENALINE OF
+Dialogue: 0,0:00:20.29,0:00:20.73,Cap,,0,0,0,,THE {\1c&H0000E5FF&\fscx110\fscy110}ADRENALINE{\r} OF
+Dialogue: 0,0:00:20.73,0:00:21.12,Cap,,0,0,0,,THE ADRENALINE {\1c&H0000E5FF&\fscx110\fscy110}OF{\r}
+Dialogue: 0,0:00:20.97,0:00:21.17,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}BULL{\r} RIDING.
+Dialogue: 0,0:00:21.17,0:00:21.60,Cap,,0,0,0,,BULL {\1c&H0000E5FF&\fscx110\fscy110}RIDING.{\r}
+Dialogue: 0,0:00:21.67,0:00:21.83,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THIS{\r} IS BURT
+Dialogue: 0,0:00:21.83,0:00:21.95,Cap,,0,0,0,,THIS {\1c&H0000E5FF&\fscx110\fscy110}IS{\r} BURT
+Dialogue: 0,0:00:21.95,0:00:22.30,Cap,,0,0,0,,THIS IS {\1c&H0000E5FF&\fscx110\fscy110}BURT{\r}
+Dialogue: 0,0:00:22.15,0:00:22.60,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}DAYCAKE.{\r}
+Dialogue: 0,0:00:22.61,0:00:22.71,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}YOU{\r} DON'T GET
+Dialogue: 0,0:00:22.71,0:00:22.81,Cap,,0,0,0,,YOU {\1c&H0000E5FF&\fscx110\fscy110}DON'T{\r} GET
+Dialogue: 0,0:00:22.81,0:00:23.10,Cap,,0,0,0,,YOU DON'T {\1c&H0000E5FF&\fscx110\fscy110}GET{\r}
+Dialogue: 0,0:00:22.95,0:00:23.05,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}TO{\r} RIDE HIM.
+Dialogue: 0,0:00:23.05,0:00:23.25,Cap,,0,0,0,,TO {\1c&H0000E5FF&\fscx110\fscy110}RIDE{\r} HIM.
+Dialogue: 0,0:00:23.25,0:00:23.66,Cap,,0,0,0,,TO RIDE {\1c&H0000E5FF&\fscx110\fscy110}HIM.{\r}
+Dialogue: 0,0:00:23.79,0:00:23.81,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}THE{\r} ADRENALINE FROM
+Dialogue: 0,0:00:23.81,0:00:24.03,Cap,,0,0,0,,THE {\1c&H0000E5FF&\fscx110\fscy110}ADRENALINE{\r} FROM
+Dialogue: 0,0:00:24.03,0:00:24.42,Cap,,0,0,0,,THE ADRENALINE {\1c&H0000E5FF&\fscx110\fscy110}FROM{\r}
+Dialogue: 0,0:00:24.27,0:00:24.51,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}WATCHING{\r} A FORMULA
+Dialogue: 0,0:00:24.51,0:00:24.65,Cap,,0,0,0,,WATCHING {\1c&H0000E5FF&\fscx110\fscy110}A{\r} FORMULA
+Dialogue: 0,0:00:24.65,0:00:24.96,Cap,,0,0,0,,WATCHING A {\1c&H0000E5FF&\fscx110\fscy110}FORMULA{\r}
+Dialogue: 0,0:00:24.81,0:00:25.07,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}ONE{\r} RACE IS
+Dialogue: 0,0:00:25.07,0:00:25.29,Cap,,0,0,0,,ONE {\1c&H0000E5FF&\fscx110\fscy110}RACE{\r} IS
+Dialogue: 0,0:00:25.29,0:00:25.66,Cap,,0,0,0,,ONE RACE {\1c&H0000E5FF&\fscx110\fscy110}IS{\r}
+Dialogue: 0,0:00:25.51,0:00:26.12,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}EXCITEMENT.{\r}
+Dialogue: 0,0:00:26.17,0:00:26.27,Cap,,0,0,0,,{\1c&H0000E5FF&\fscx110\fscy110}OH{\r} MY
+Dialogue: 0,0:00:26.27,0:00:26.52,Cap,,0,0,0,,OH {\1c&H0000E5FF&\fscx110\fscy110}MY{\r}
