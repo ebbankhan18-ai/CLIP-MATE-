@@ -1,0 +1,1 @@
+"""Clip Mate backend package."""

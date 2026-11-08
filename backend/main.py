@@ -22,7 +22,12 @@ from pydantic import BaseModel  # noqa: E402
 from . import pipeline, social  # noqa: E402
 
 DATA = ROOT / "data"
-(DATA / "projects").mkdir(parents=True, exist_ok=True)
+try:
+    (DATA / "projects").mkdir(parents=True, exist_ok=True)
+except OSError:
+    # Serverless hosts (Vercel) mount the project read-only; /tmp is writable there.
+    DATA = Path(os.getenv("CLIP_MATE_DATA", "/tmp/clip-mate"))
+    (DATA / "projects").mkdir(parents=True, exist_ok=True)
 
 app = FastAPI()
 JOB_LOCK = threading.Lock()   # one heavy job at a time keeps a laptop responsive
