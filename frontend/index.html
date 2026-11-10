@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="module">
-    import { pipeline } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2';
+    <script type="module">import { pipeline } from CDN</script>;
     window.pipeline = pipeline;
 </script>
 <title>Clip Mate</title>
@@ -606,7 +606,7 @@ let pipeline = null;
 async function loadModel() {
   if (modelLoaded) return true;
   try {
-    pipeline = await window.pipeline("text-generation", "Xenova/distilgpt2");
+    pipeline = await window.pipeline(...);
     modelLoaded = true;
     notify("AI loaded (Xenova/distilgpt2) - ready", "ok");
     return true;
