@@ -1,0 +1,10 @@
+backend
+data
+requirements.txt
+pyproject.toml
+run.bat
+.env
+.env.example
+package.json
+package-lock.json
+*.py
