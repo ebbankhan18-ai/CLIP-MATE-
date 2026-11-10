@@ -1,5 +1,0 @@
-echo {
-  \"framework\": \"html\",
-  \"buildCommand\": \"echo skipped\",
-  \"outputDirectory\": \"frontend\"
-} > vercel.json
