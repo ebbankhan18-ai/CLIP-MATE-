@@ -1,10 +1,18 @@
+# Clip Mate is a local Python app. Vercel only hosts the front end, so keep
+# every Python and media file out of the upload. Otherwise Vercel detects
+# requirements.txt / pyproject.toml, builds a Python function, and blows
+# past the 500 MB function limit.
 backend
 data
 requirements.txt
 pyproject.toml
 run.bat
+run.sh
 .env
 .env.example
-package.json
+README.md
 package-lock.json
+package.json
+__pycache__
+*.pyc
 *.py
