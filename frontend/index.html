@@ -560,7 +560,7 @@ const DEFAULTS = {
   clip_files: [],
   projects: [],
   current: null,
-  model: "Qwen3-VL-3B",
+  model: "distilgpt2",
   modelReady: false
 };
 
@@ -601,13 +601,9 @@ let pipeline = null;
 async function loadModel() {
   if (modelLoaded) return true;
   try {
-    const { AutoModelForVisionCausalLM, AutoTokenizer, pipeline: createPipeline } = window["@huggingface/transformers"];
-    const modelId = "Qwen/Qwen3-VL-3B-Instruct";
-    const tok = await AutoTokenizer.from_pretrained(modelId);
-    const model = await AutoModelForVisionCausalLM.from_pretrained(modelId, { device: "cpu", dtype: "fp32" });
-    pipeline = await createPipeline("image-text-to-text", { model, tokenizer: tok });
+    pipeline = await window["@huggingface/transformers"].pipeline("text-generation", "Xenova/distilgpt2");
     modelLoaded = true;
-    notify("AI loaded (" + modelId + ") - ready", "ok");
+    notify("AI loaded (Xenova/distilgpt2) - ready", "ok");
     return true;
   } catch (err) {
     notify("AI model not available: " + err.message, "warn");
