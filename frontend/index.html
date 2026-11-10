@@ -3,8 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="module">
+    import { pipeline } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2';
+    window.pipeline = pipeline;
+</script>
 <title>Clip Mate</title>
-<script src="https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -602,7 +606,7 @@ let pipeline = null;
 async function loadModel() {
   if (modelLoaded) return true;
   try {
-    pipeline = await window["@huggingface/transformers"].pipeline("text-generation", "Xenova/distilgpt2");
+    pipeline = await window.pipeline("text-generation", "Xenova/distilgpt2");
     modelLoaded = true;
     notify("AI loaded (Xenova/distilgpt2) - ready", "ok");
     return true;
